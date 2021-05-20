@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+    <title>Laboratorio 6</title>
+</head>
+<body>
+    <header class="jumbotron text-center">
+        <h1>Primeira Web Page feita em Django</h1>
+        <p>Conteudo da primeira pagina</p>
+        <nav>
+            <a class="btn btn-info" href="{% url 'website:home' %}">Home</a>
+            <a class="btn btn-info" href="{% url 'website:page1' %}">Page1</a>
+            <a class="btn btn-info" href="{% url 'website:page2' %}">Page2</a>
+        </nav>
+    </header>
+    <article>
+        <main class="col-sm-6">
+            {% block main %}
+            {%  endblock main %}
+        </main>
+        <aside class="col-sm-6">
+            {% load static %}
+            <img src="{% static 'website/images/image.jpg' %}">
+        </aside>
+    </article>
+    <footer> João Santos a21905131 - LEI - ULHT </footer>
+</body>
+</html>
